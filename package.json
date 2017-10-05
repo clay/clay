@@ -1,0 +1,19 @@
+{
+  "name": "clay.github.io",
+  "version": "0.0.1",
+  "description": "Clay",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clay/clay.git"
+  },
+  "author": "New York Media",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clay/clay/issues"
+  },
+  "homepage": "https://github.com/clay/clay#readme"
+}

@@ -2,9 +2,11 @@
   "name": "clay.github.io",
   "version": "0.0.1",
   "description": "Clay",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf ./docs",
+    "prepare": "gitbook install",
+    "watch": "npm run prepare && gitbook serve",
+    "build": "gitbook build ./ ./docs"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/clay/clay/issues"
   },
-  "homepage": "https://github.com/clay/clay#readme"
+  "homepage": "https://github.com/clay/clay#readme",
+  "dependencies": {
+    "gitbook-plugin-anchorjs": "^1.1.1",
+    "gitbook-plugin-github": "^2.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
+  }
 }

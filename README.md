@@ -1,3 +1,4 @@
-# Clay
+Hello!
+======
 
-Coming soon!
+Documentation and guides for working with Clay.

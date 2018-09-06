@@ -1,7 +1,3 @@
----
-description: '"A new way to organize, edit, and deliver the web, one component at a time."'
----
-
 # Clay
 
 Clay is an open-source CMS created by [New York Media](http://mediakit.nymag.com/) powering [New York Magazine](http://nymag.com), [Vulture](http://www.vulture.com), [The Cut](https://www.thecut.com), [Grub Street](http://www.grubstreet.com) and [Slate](https://slate.com/). 

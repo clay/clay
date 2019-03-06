@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Components · Clay</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Components are reusable, configurable, self-contained bits of the web.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Components · Clay"/><meta property="og:type" content="website"/><meta property="og:url" content="https://clay.github.io//index.html"/><meta property="og:description" content="&lt;p&gt;Components are reusable, configurable, self-contained bits of the web.&lt;/p&gt;
+"/><meta property="og:image" content="https://clay.github.io/#99D3DF"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://clay.github.io/#99D3DF"/><link rel="shortcut icon" href="/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo.svg" alt="Clay"/><h2 class="headerTitleWithLogo">Clay</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/components" target="_self">Components</a></li><li class="siteNavGroupActive"><a href="/docs/pages" target="_self">Pages</a></li><li class="siteNavGroupActive"><a href="/docs/layouts" target="_self">Layouts</a></li><li class="siteNavGroupActive"><a href="/docs/uris" target="_self">Uris</a></li><li class="siteNavGroupActive"><a href="/docs/lists" target="_self">Lists</a></li><li class="siteNavGroupActive"><a href="/docs/users" target="_self">Users</a></li><li class=""><a href="https://github.com/clay/clay" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Clay Data Structures</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Clay Data Structures</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/components">Components</a></li><li class="navListItem"><a class="navItem" href="/docs/pages">Pages</a></li><li class="navListItem"><a class="navItem" href="/docs/layouts">Layouts</a></li><li class="navListItem"><a class="navItem" href="/docs/uris">Uris</a></li><li class="navListItem"><a class="navItem" href="/docs/lists">Lists</a></li><li class="navListItem"><a class="navItem" href="/docs/users">users</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Components</h1></header><article><div><span><p>Components are reusable, configurable, self-contained bits of the web.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="components-are-data"></a><a href="#components-are-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components Are Data</h2>
+<p>The anatomy of a component simple, <em>it's just a JSON object</em>.</p>
+<p>When we talk about a &quot;component&quot;, we're generally talking a blueprint for JSON data. This blueprint is then used for an unlimited number of JSON objects which all have <em>the same structure but can all have different data</em>. Make sense?</p>
+<p>So if a component is just a blueprint for data we can refer to each individual JSON object as an <strong><em>instance</em></strong> of a component, with each instance being unique.</p>
+<p>This concept of what a component is and how a component can have multiple instances forms the basis for all of Clay.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="component-api"></a><a href="#component-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Component API</h2>
+<p>More details about the component API can be found in the Amphora documentation, but the basics are outlined below.</p>
+<p>In this way you can see that the component API has the following structure:</p>
+<p><code>&lt;SITE HOST&gt;/&lt;SITE PATH (OPTIONAL)/_components/&lt;COMPONENT NAME&gt;/instances/&lt;INSTANCE ID&gt;</code></p>
+<p>Understanding this structure makes it possible to create, read, update and delete component data in your Clay instance.</p>
+<p>To view, all available components in a Clay instance visit the <code>/_components</code> route: <a href="http://nymag.com/_components/">nymag.com/_components​</a></p>
+<p>To view the default data for a component simply request a component by name: <code>nymag.com/_components/article​</code></p>
+<p>To view all instances of the component: <code>nymag.com/_components/article/instances​</code></p>
+<p>To view a single instance of the component: <code>nymag.com/_components/article/instances/ID</code></p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="if-components-are-data"></a><a href="#if-components-are-data" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>If Components Are Data...</h2>
+<p>Components live in three places:</p>
+<ul>
+<li><p>On their own! All components and their individual instances are fully available at their REST endpoints</p></li>
+<li><p><a href="/docs/pages">Inside a page</a>: page-level components are unique to a certain page</p></li>
+<li><p><a href="/docs/layouts">Inside a layout</a>: layout-level components are shared on every page that uses a certain
+layout.</p></li>
+</ul>
+<p>Some simple rules when making components are as follows:</p>
+<ul>
+<li><p>If you want data that is shared between many pages, put a component in a layout.</p></li>
+<li><p>If you want data that is not shared between pages, put a component in a page.</p></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/pages"><span>Pages</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#components-are-data">Components Are Data</a></li><li><a href="#component-api">Component API</a></li><li><a href="#if-components-are-data">If Components Are Data...</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/components.html">Components</a><a href="/docs/en/pages.html">Pages</a><a href="/docs/en/layouts.html">Layouts</a><a href="/docs/en/uris.html">Uris</a><a href="/docs/en/lists.html">Lists</a><a href="/docs/en/users.html">Users</a></div><div><h5>Community</h5></div><div><h5>More</h5><a href="https://github.com/clay/clay">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/clay/clay/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Clay on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

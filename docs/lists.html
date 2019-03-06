@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Lists · Clay</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;hr&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Lists · Clay"/><meta property="og:type" content="website"/><meta property="og:url" content="https://clay.github.io//index.html"/><meta property="og:description" content="&lt;hr&gt;
+"/><meta property="og:image" content="https://clay.github.io/#99D3DF"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://clay.github.io/#99D3DF"/><link rel="shortcut icon" href="/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo.svg" alt="Clay"/><h2 class="headerTitleWithLogo">Clay</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/components" target="_self">Components</a></li><li class="siteNavGroupActive"><a href="/docs/pages" target="_self">Pages</a></li><li class="siteNavGroupActive"><a href="/docs/layouts" target="_self">Layouts</a></li><li class="siteNavGroupActive"><a href="/docs/uris" target="_self">Uris</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/lists" target="_self">Lists</a></li><li class="siteNavGroupActive"><a href="/docs/users" target="_self">Users</a></li><li class=""><a href="https://github.com/clay/clay" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Clay Data Structures</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Clay Data Structures</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/components">Components</a></li><li class="navListItem"><a class="navItem" href="/docs/pages">Pages</a></li><li class="navListItem"><a class="navItem" href="/docs/layouts">Layouts</a></li><li class="navListItem"><a class="navItem" href="/docs/uris">Uris</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/lists">Lists</a></li><li class="navListItem"><a class="navItem" href="/docs/users">users</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Lists</h1></header><article><div><span><hr>
+<p>Lists serve as an unstructured data store for JSON data that any Clay instance might need to use. The only requirement for the data inside an instance of a list is that the data is valid JSON.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="viewing-all-lists"></a><a href="#viewing-all-lists" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Viewing All Lists</h2>
+<p>Lists — like other data structures in Clay — have unique instances. To view a list of all instances in your Clay installation simply navigate to the <code>/_lists</code> endpoint at the root of your install. For example, navigating <a href="http://www.vulture.com/_lists">www.vulture.com/_lists</a> will return an Array of list id's, similar to how requesting <a href="http://www.vulture.com/_pages">www.vulture.com/_pages</a> will return a list of all pages.</p>
+<h3><a class="anchor" aria-hidden="true" id="example-response"></a><a href="#example-response" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Response:</h3>
+<pre><code class="hljs css language-js">[
+  <span class="hljs-string">"www.vulture.com/_lists/authors"</span>,
+  <span class="hljs-string">"www.vulture.com/_lists/layout-labels"</span>,
+  <span class="hljs-string">"www.vulture.com/_lists/new-pages"</span>,
+  <span class="hljs-string">"www.vulture.com/_lists/tags"</span>
+]
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="viewing-a-single-list"></a><a href="#viewing-a-single-list" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Viewing a Single List</h2>
+<p>Once you know the id of a list you would like to see the contents of, simply request that specific uri in your browser. For example, <a href="http://www.vulture.com/_lists/authors">www.vulture.com/_lists/authors</a> will return a list of authors who have published content on Vulture.</p>
+<h3><a class="anchor" aria-hidden="true" id="example-response-1"></a><a href="#example-response-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example Response:</h3>
+<pre><code class="hljs css language-js">[{ 
+        <span class="hljs-string">"text"</span>: <span class="hljs-string">"Halle Kiefer"</span>, 
+        <span class="hljs-string">"count"</span>: <span class="hljs-number">45</span> 
+    }, { 
+        <span class="hljs-string">"text"</span>: <span class="hljs-string">"Josef Adalian"</span>, 
+        <span class="hljs-string">"count"</span>: <span class="hljs-number">8</span> 
+    }, { 
+        <span class="hljs-string">"text"</span>: <span class="hljs-string">"Devon Ivie"</span>, 
+        <span class="hljs-string">"count"</span>: <span class="hljs-number">32</span> 
+    }, { 
+        <span class="hljs-string">"text"</span>: <span class="hljs-string">"Nikita Richardson"</span>, 
+        <span class="hljs-string">"count"</span>: <span class="hljs-number">1</span> 
+    }, { 
+        <span class="hljs-string">"text"</span>: <span class="hljs-string">"Anne Victoria Clark"</span>, 
+        <span class="hljs-string">"count"</span>: <span class="hljs-number">47</span> 
+    }, { 
+        <span class="hljs-string">"text"</span>: <span class="hljs-string">"Opheli Garcia Lawler"</span>, 
+        <span class="hljs-string">"count"</span>: <span class="hljs-number">3</span> 
+    }, { 
+        <span class="hljs-string">"text"</span>: <span class="hljs-string">"Jasmine Sanders"</span>, 
+        <span class="hljs-string">"count"</span>: <span class="hljs-number">3</span> 
+    }, { 
+        <span class="hljs-string">"text"</span>: <span class="hljs-string">"Angelica Jade Bastién"</span>, 
+        <span class="hljs-string">"count"</span>: <span class="hljs-number">3</span> 
+    }, 
+    ... <span class="hljs-comment">// Truncated for brevity</span>
+]
+</code></pre>
+<p>The important thing to realize is that the data in this list is arbitrary and is not something dictated by the Clay platform. The data is kept up-to-date by components as they are edited and published. This list can then turn around and be used by any component (such as a <a href="https://claycms.gitbook.io/kiln/kiln-fundamentals/components/inputs#simple-list">data source for autocomplete</a>) or any external service. The content of lists are completely dictated by the implementation.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/uris"><span class="arrow-prev">← </span><span>Uris</span></a><a class="docs-next button" href="/docs/users"><span>users</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#viewing-all-lists">Viewing All Lists</a><ul class="toc-headings"><li><a href="#example-response">Example Response:</a></li></ul></li><li><a href="#viewing-a-single-list">Viewing a Single List</a><ul class="toc-headings"><li><a href="#example-response-1">Example Response:</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Docs</h5><a href="/docs/en/components.html">Components</a><a href="/docs/en/pages.html">Pages</a><a href="/docs/en/layouts.html">Layouts</a><a href="/docs/en/uris.html">Uris</a><a href="/docs/en/lists.html">Lists</a><a href="/docs/en/users.html">Users</a></div><div><h5>Community</h5></div><div><h5>More</h5><a href="https://github.com/clay/clay">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/clay/clay/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star Clay on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

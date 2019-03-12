@@ -17,7 +17,7 @@ const siteConfig = {
   title: 'Clay', // Title for your website.
   tagline: 'open-source CMS',
   url: 'https://clay.github.io/', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  baseUrl: '/clay/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',

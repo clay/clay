@@ -37,41 +37,16 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('components.html', this.props.language)}>
-              Components
+            <a target="_blank" href={this.docUrl('getting-started', this.props.language)}>
+              Getting Started
             </a>
-            <a href={this.docUrl('pages.html', this.props.language)}>
-              Pages
+            <a target="_blank" href={this.docUrl('glossary', this.props.language)}>
+              Glossary
             </a>
-            <a href={this.docUrl('layouts.html', this.props.language)}>
-              Layouts
-            </a>
-            <a href={this.docUrl('uris.html', this.props.language)}>
-              Uris
-            </a>
-            <a href={this.docUrl('lists.html', this.props.language)}>
-              Lists
-            </a>
-            <a href={this.docUrl('users.html', this.props.language)}>
-              Users
-            </a>
-          </div>
-          <div>
-            <h5>Community</h5>
           </div>
           <div>
             <h5>More</h5>
-            <a href="https://github.com/clay/clay">GitHub</a>
-            <a
-              className="github-button"
-              href={this.props.config.repoUrl}
-              data-icon="octicon-star"
-              data-count-href="/clay/clay/stargazers"
-              data-show-count="true"
-              data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star Clay on GitHub">
-              Star
-            </a>
+            <a target="_blank" href="https://github.com/clay/clay-starter">GitHub</a>
           </div>
         </section>
         <section className="copyright">{this.props.config.copyright}</section>

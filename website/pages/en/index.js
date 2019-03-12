@@ -136,7 +136,7 @@ class Index extends React.Component {
                   title: 'Apply Your Own Content Model',
                 },
                 {
-                  content: `Clay is designed to support multiple sites ina single instance meaning your components can be shared and re-used across sites within the same codebase`,
+                  content: `Clay is designed to support multiple sites in a single instance meaning your components can be shared and re-used across sites within the same codebase`,
                   image: `${siteConfig.baseUrl}img/react.svg`,
                   imageAlign: 'top',
                   imageAlt: 'TBD',
@@ -150,7 +150,7 @@ class Index extends React.Component {
             <GridBlock
               contents={[
                 {
-                  content: `Leave long forms in the past and edit your content on the same page it live. Clay's editing experience allows users to preview their changes as they happen and to know how the page will look without switching to another view.`,
+                  content: `Leave long forms in the past and edit your content on the same page it lives. Clay's editing experience allows users to preview their changes as they happen and to know how the page will look without switching to another view.`,
                   imageAlign: 'right',
                   image: `${siteConfig.baseUrl}img/homepage-edit-example.gif`,
                   imageAlt: 'Example of the edit experience',

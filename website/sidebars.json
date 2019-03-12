@@ -1,5 +1,16 @@
 {
   "docs": {
-    "Clay Data Structures": ["components", "pages", "layouts", "uris", "lists", "users"]
+    "Getting Started": [
+      "getting-started"
+    ],
+    "Clay Data Structures": [
+      "components",
+      "pages",
+      "layouts",
+      "uris",
+      "lists",
+      "users"
+    ],
+    "Helpful Links": ["glossary"]
   }
 }

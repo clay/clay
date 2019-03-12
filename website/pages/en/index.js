@@ -29,11 +29,11 @@ class HomeSplash extends React.Component {
       </div>
     );
 
-    const Logo = props => (
-      <div className="projectLogo">
-        <img src={props.img_src} alt="Project Logo" />
-      </div>
-    );
+    // const Logo = props => (
+    //   <div className="projectLogo">
+    //     <img src={props.img_src} alt="Project Logo" />
+    //   </div>
+    // );
 
     const ProjectTitle = () => (
       <h2 className="projectTitle">
@@ -60,16 +60,12 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/logo.svg`} />
+        {/* <Logo img_src={`${baseUrl}img/logo.svg`} /> */}
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href={docUrl('components.html')}>Components</Button>
-            <Button href={docUrl('pages.html')}>Pages</Button>
-            <Button href={docUrl('layouts.html')}>Layouts</Button>
-            <Button href={docUrl('uris.html')}>Uris</Button>
-            <Button href={docUrl('lists.html')}>Lists</Button>
-            <Button href={docUrl('users.html')}>Users</Button>
+            <Button href={docUrl('getting-started')}>Getting Started</Button>
+            <Button href="https://github.com/clay" target="_blank">View On Github</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -99,25 +95,85 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Container padding={['right', 'left']}>
-            <div className="mainContent">
-              <MarkdownBlock>
-                Clay is an open-source CMS created by [New York Media](http://mediakit.nymag.com/) powering [New York Magazine](http://nymag.com/), 
-                [Vulture](https://www.vulture.com/), [The Cut](https://www.thecut.com/), [Grub Street](http://www.grubstreet.com/) and [Slate](https://slate.com/).
-              </MarkdownBlock>
-            </div>
-            <div className="mainContent">
-              <MarkdownBlock>
-                Clay is comprised of modules available on npm, but the core system is comprised of [Kiln](https://claycms.gitbook.io/kiln); the editing
-                interface; and [Amphora](https://claycms.gitbook.io/amphora); the REST API.
-              </MarkdownBlock>
-            </div>
-            <div className="mainContent">
-              <MarkdownBlock>
-                The documentation in this space is meant to explain core concepts of Clay,
-                for a deeper technical dive, you can explore the documentation of each of the modules themselves.
-              </MarkdownBlock>
-            </div>
+        <Container padding={['bottom', 'top']} background="light">
+            <GridBlock
+              align="center"
+              contents={[
+                {
+                  content: `Everything is JSON in Clay and can be quickly retrieved using simple REST API powered by a Node.js and Express`,
+                  image: `${siteConfig.baseUrl}img/markdown.png`,
+                  imageAlign: 'top',
+                  imageAlt: 'TBD',
+                  title: 'Simple REST API',
+                },
+                {
+                  content: `Components in Clay are simple JSON objects which can be distributed into any format (RSS, Apple News, AMP, etc.) plug and play renderers`,
+                  image: `${siteConfig.baseUrl}img/react.svg`,
+                  imageAlign: 'top',
+                  imageAlt: 'TBD',
+                  title: 'Render Into Any Format',
+                },
+                {
+                  content: `Build plugins (or use community plugins) to make the editing experience match what your needs`,
+                  image: `${siteConfig.baseUrl}img/translation.svg`,
+                  imageAlign: 'top',
+                  imageAlt: 'TBD',
+                  title: 'Client & Server Plugins',
+                },
+              ]}
+              layout="threeColumn"
+            />
+          </Container>
+          <Container padding={['bottom', 'top']} background="light">
+            <GridBlock
+              align="center"
+              contents={[
+                {
+                  content: `Clay has _zero_ assumptions about your content, everything is simply a component. YOU give your components meaning that match your needs rather than forcing your content into a content type`,
+                  image: `${siteConfig.baseUrl}img/markdown.png`,
+                  imageAlign: 'top',
+                  imageAlt: 'TBD',
+                  title: 'Apply Your Own Content Model',
+                },
+                {
+                  content: `Clay is designed to support multiple sites ina single instance meaning your components can be shared and re-used across sites within the same codebase`,
+                  image: `${siteConfig.baseUrl}img/react.svg`,
+                  imageAlign: 'top',
+                  imageAlt: 'TBD',
+                  title: 'Run One Site Or Dozens',
+                }
+              ]}
+              layout="twoColumn"
+            />
+          </Container>
+          <Container padding={['bottom', 'top']}>
+            <GridBlock
+              contents={[
+                {
+                  content: `Leave long forms in the past and edit your content on the same page it live. Clay's editing experience allows users to preview their changes as they happen and to know how the page will look without switching to another view.`,
+                  imageAlign: 'right',
+                  image: `${siteConfig.baseUrl}img/homepage-edit-example.gif`,
+                  imageAlt: 'Example of the edit experience',
+                  title: 'Inline Editing Experience',
+                },
+              ]}
+              layout="twoColumn"
+            />
+          </Container>
+          <Container padding={['bottom', 'top']} background="light">
+            <GridBlock
+              contents={[
+                {
+                  content: `Want to give Clay a try? We have a very simple [starter example that can be found here](https://github.com/clay/clay-starter).</br>All of the components are free to use in your own project and more will be added as the platform expands.`,
+                  title: 'Easy To Get Started',
+                }, {
+                  content: `Have an issue you want to be addressed? Submit an [issue in this repo](https://github.com/clay/clay/issues)</br>and we'll help you find the solution.`,
+                  title: 'Dedicated To Open Source',
+                }
+              ]}
+              layout="twoColumn"
+              align="center"
+            />
           </Container>
         </div>
       </div>

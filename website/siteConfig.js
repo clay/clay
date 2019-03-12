@@ -8,15 +8,15 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-const repoUrl = 'https://github.com/clay/clay';
+const repoUrl = 'https://github.com/clay';
 
 // List of projects/orgs using your project for the users page.
 const users = [];
 
 const siteConfig = {
   title: 'Clay', // Title for your website.
-  tagline: 'open-source CMS',
-  url: 'https://clay.github.io/', // Your website URL
+  tagline: 'Organize, edit, and deliver the web, one component at a time.',
+  url: 'https://clay.github.io', // Your website URL
   baseUrl: '/clay/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -24,20 +24,15 @@ const siteConfig = {
 
   // Used for publishing and more
   projectName: 'Clay',
-  organizationName: 'Clay platform',
+  organizationName: 'clayplatform',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'components', label: 'Components'},
-    {doc: 'pages', label: 'Pages'},
-    {doc: 'layouts', label: 'Layouts'},
-    {doc: 'uris', label: 'Uris'},
-    {doc: 'lists', label: 'Lists'},
-    {doc: 'users', label: 'Users'},
-    {href: repoUrl, label: 'GitHub'}
+    { doc: 'getting-started', label: 'Getting Started' },
+    { href: repoUrl, label: 'Github' }
   ],
 
   // If you have users set above, you add it here:
@@ -50,8 +45,8 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#88BBD6',
-    secondaryColor: '#99D3DF',
+    primaryColor: '#607d8b',
+    secondaryColor: '#1976d2',
   },
 
   /* Custom fonts for website */
@@ -79,6 +74,7 @@ const siteConfig = {
   // Add custom scripts here that would be placed in <script> tags.
   scripts: ['https://buttons.github.io/buttons.js'],
 
+  docsSideNavCollapsible: true,
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
   // No .html extensions for paths.

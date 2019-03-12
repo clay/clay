@@ -1,12 +1,12 @@
 ---
 id: users
 title: Users
-sidebar_label: users
+sidebar_label: Users
 ---
 
 ---
 
-Users are a relatively simple data structure and simply allow content creators and editors to log into Clay to work with content. A user object is structured accordingly: 
+Users are a relatively simple data structure and simply allow content creators and editors to log into Clay to work with content. A user object is structured accordingly:
 
 ```js
 {
@@ -41,5 +41,3 @@ Found at: /_users/dXNlckBnb29nbGUuY29tQGdvb2dsZQ==
 ```
 
 The user's id is a Base64 encoded string of the `<username>@<provider` and the authentication level is used to define permissions when editing content via [Kiln](https://claycms.gitbook.io/kiln).
-
-

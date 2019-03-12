@@ -8,7 +8,7 @@
 // See https://docusaurus.io/docs/site-config for all the possible
 // site configuration options.
 
-const repoUrl = 'https://github.com/clay/clay';
+const repoUrl = 'https://github.com/clay';
 
 // List of projects/orgs using your project for the users page.
 const users = [];
@@ -16,7 +16,7 @@ const users = [];
 const siteConfig = {
   title: 'Clay', // Title for your website.
   tagline: 'Organize, edit, and deliver the web, one component at a time.',
-  url: 'https://clay.github.io/', // Your website URL
+  url: 'https://clay.github.io', // Your website URL
   baseUrl: '/clay/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -24,7 +24,7 @@ const siteConfig = {
 
   // Used for publishing and more
   projectName: 'Clay',
-  organizationName: 'Clay Platform',
+  organizationName: 'clayplatform',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -32,7 +32,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'getting-started', label: 'Getting Started'},
-    {href: repoUrl, label: 'GitHub'}
+    {href: repoUrl, label: 'G'}
   ],
 
   // If you have users set above, you add it here:

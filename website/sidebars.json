@@ -1,7 +1,8 @@
 {
   "docs": {
     "Getting Started": [
-      "getting-started"
+      "getting-started",
+      "building-a-component"
     ],
     "Clay Data Structures": [
       "components",

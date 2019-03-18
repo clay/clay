@@ -41,6 +41,7 @@ To view a single instance of the component: `nymag.com/_components/article/insta
 ---
 
 ## If Components Are Data...
+
 Components live in three places:
 
 - On their own! All components and their individual instances are fully available at their REST endpoints

@@ -101,24 +101,24 @@ class Index extends React.Component {
               contents={[
                 {
                   content: `Everything is JSON in Clay and can be quickly retrieved using simple REST API powered by a Node.js and Express`,
-                  image: `${siteConfig.baseUrl}img/markdown.png`,
-                  imageAlign: 'top',
-                  imageAlt: 'TBD',
+                  // image: `${siteConfig.baseUrl}img/markdown.png`,
+                  // imageAlign: 'top',
+                  // imageAlt: 'TBD',
                   title: 'Simple REST API',
                 },
                 {
                   content: `Components in Clay are simple JSON objects which can be distributed into any format (RSS, Apple News, AMP, etc.) plug and play renderers`,
-                  image: `${siteConfig.baseUrl}img/react.svg`,
-                  imageAlign: 'top',
-                  imageAlt: 'TBD',
+                  // image: `${siteConfig.baseUrl}img/react.svg`,
+                  // imageAlign: 'top',
+                  // imageAlt: 'TBD',
                   title: 'Render Into Any Format',
                 },
                 {
-                  content: `Build plugins (or use community plugins) to make the editing experience match what your needs`,
-                  image: `${siteConfig.baseUrl}img/translation.svg`,
-                  imageAlign: 'top',
-                  imageAlt: 'TBD',
-                  title: 'Client & Server Plugins',
+                  content: `Build plugins (or use what the community provides) to make the editing experience match your needs`,
+                  // image: `${siteConfig.baseUrl}img/translation.svg`,
+                  // imageAlign: 'top',
+                  // imageAlt: 'TBD',
+                  title: 'Plugin Support',
                 },
               ]}
               layout="threeColumn"
@@ -129,17 +129,17 @@ class Index extends React.Component {
               align="center"
               contents={[
                 {
-                  content: `Clay has _zero_ assumptions about your content, everything is simply a component. YOU give your components meaning that match your needs rather than forcing your content into a content type`,
-                  image: `${siteConfig.baseUrl}img/markdown.png`,
-                  imageAlign: 'top',
-                  imageAlt: 'TBD',
-                  title: 'Apply Your Own Content Model',
+                  content: `Clay has _zero_ assumptions about your content, everything is just a component. YOU give your components meaning that match your needs rather than forcing your content into a content type`,
+                  // image: `${siteConfig.baseUrl}img/markdown.png`,
+                  // imageAlign: 'top',
+                  // imageAlt: 'TBD',
+                  title: 'No Assumed Content Model',
                 },
                 {
                   content: `Clay is designed to support multiple sites in a single instance meaning your components can be shared and re-used across sites within the same codebase`,
-                  image: `${siteConfig.baseUrl}img/react.svg`,
-                  imageAlign: 'top',
-                  imageAlt: 'TBD',
+                  // image: `${siteConfig.baseUrl}img/react.svg`,
+                  // imageAlign: 'top',
+                  // imageAlt: 'TBD',
                   title: 'Run One Site Or Dozens',
                 }
               ]}

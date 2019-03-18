@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Building A Component · Clay</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;blockquote&gt;
+&lt;p&gt;This page is going to assume you have a running instance of Clay to experiment with. If don&#x27;t have one already you can &lt;a href=&quot;https://github.com/clay/clay-starter&quot;&gt;&lt;strong&gt;checkout the starter kit&lt;/strong&gt;&lt;/a&gt; and see some examples of components.&lt;/p&gt;
+&lt;/blockquote&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Building A Component · Clay"/><meta property="og:type" content="website"/><meta property="og:url" content="https://clay.github.io/clay/index.html"/><meta property="og:description" content="&lt;blockquote&gt;
+&lt;p&gt;This page is going to assume you have a running instance of Clay to experiment with. If don&#x27;t have one already you can &lt;a href=&quot;https://github.com/clay/clay-starter&quot;&gt;&lt;strong&gt;checkout the starter kit&lt;/strong&gt;&lt;/a&gt; and see some examples of components.&lt;/p&gt;
+&lt;/blockquote&gt;
+"/><meta property="og:image" content="https://clay.github.io/clay/#99D3DF"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://clay.github.io/clay/#99D3DF"/><link rel="shortcut icon" href="/clay/"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/clay/css/main.css"/><script src="/clay/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/clay/"><img class="logo" src="/clay/img/logo.svg" alt="Clay"/><h2 class="headerTitleWithLogo">Clay</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/clay/docs/getting-started" target="_self">Getting Started</a></li><li class=""><a href="https://github.com/clay" target="_self">Github</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/clay/docs/getting-started">Getting Started</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/clay/docs/building-a-component">Building A Component</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Clay Data Structures<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/clay/docs/components">Components</a></li><li class="navListItem"><a class="navItem" href="/clay/docs/pages">Pages</a></li><li class="navListItem"><a class="navItem" href="/clay/docs/layouts">Layouts</a></li><li class="navListItem"><a class="navItem" href="/clay/docs/uris">Uris</a></li><li class="navListItem"><a class="navItem" href="/clay/docs/lists">Lists</a></li><li class="navListItem"><a class="navItem" href="/clay/docs/users">Users</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Helpful Links<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/clay/docs/glossary">Glossary</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Building A Component</h1></header><article><div><span><blockquote>
+<p>This page is going to assume you have a running instance of Clay to experiment with. If don't have one already you can <a href="https://github.com/clay/clay-starter"><strong>checkout the starter kit</strong></a> and see some examples of components.</p>
+</blockquote>
+<p>This page descibes building a component. Before looking at the files that constitute a component <a href="/clay/docs/components">it's a good idea to read about what a component is</a>. If you feel good about those concepts then let's outline a few basics about the component structure:</p>
+<ul>
+<li>A component must live in the <code>components</code> directory at the root of your Clay instance</li>
+<li>The directory name the omponent lives in will be the name of the component</li>
+<li>Your component's name should be <a href="http://wiki.c2.com/?KebabCase">kebab case</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="anatomy-of-a-component"></a><a href="#anatomy-of-a-component" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Anatomy of a Component</h2>
+<p>A component directory has the following struture, with only two of the following files being required. Required files will be denoted by an astrisk (<code>*</code>).</p>
+<pre><code class="hljs css language-bash">my-component
+  ├── schema.yml*
+  ├── bootstrap.yml*
+  ├── model.js
+  ├── client.js
+  └── template.hbs
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="schemayml"></a><a href="#schemayml" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Schema.yml</h3>
+<p>Schemas (or schemata) are the main connective tissue between the REST API and <a href="/clay/docs/glossary#kiln">Kiln</a>. The schema of a component defines what kinds of editable fields components have as well as how those fields are grouped. When creating a component for the first time <em>a schema.yml</em> file is required for the component to be accessible via it's REST endpoint.</p>
+<p>Documentation <a href="https://claycms.gitbook.io/kiln/kiln-fundamentals/components/editing-components">exists describing the Kiln API for component editing</a> and what declarations are allowed in your schema file. For the purpose. For the purpose of this quick intro ensure the <code>_description</code> field is added to your schema with a short description on what your building.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">_description:</span> <span class="hljs-string">|
+  My cool component!
+</span></code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="bootstrapyml"></a><a href="#bootstrapyml" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bootstrap.yml</h3>
+<p><a href="glossary#bootstrap-file">This file</a> describes the data that all new instances of your component will start with when created using Clay's REST API. It's essential because each time Amphora starts up it will read from this file and <a href="glossary#bootstrap-action">write this starter data</a> into the database.</p>
+<p>Ensure your component has a <code>bootstrap.yml</code>, here's an example:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">_components:</span>
+<span class="hljs-attr">  my-component:</span>
+<span class="hljs-attr">    foo:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">    bar:</span> <span class="hljs-number">123</span>
+<span class="hljs-attr">    baz:</span> <span class="hljs-string">A</span> <span class="hljs-string">string</span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="modeljs"></a><a href="#modeljs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Model.js</h3>
+<p>This file allow components to perform logic on their data before saving and rendering. This file exposes two methods which have the exact same function signature:</p>
+<ul>
+<li><code>save</code>: this function is called when the data for a component is saved.</li>
+<li><code>render</code>: this function is called after the data has been pulled from the database but before the data has been templated by a renderer.</li>
+</ul>
+<p>Both of these functions receive the following data:</p>
+<ul>
+<li><code>ref</code> (String): the uri of the component</li>
+<li><code>data</code> (Object): the component instance's data</li>
+<li><code>locals</code> (Object): an object <a href="glossary#locals">containing information about the request</a></li>
+</ul>
+<p>Both of these functions must return <em>either an Object or a Promise which resolves an Object</em> whose value is the data for the component. On a <code>save</code> the Object will be written to the database and on a <code>render</code> the Object will be passed to the data composer. Both the save() and render() methods are optional, as many components require either one or the other.</p>
+<p>Example:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-built_in">module</span>.exports.render = <span class="hljs-function">(<span class="hljs-params">uri, data, locals</span>) =&gt;</span> {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.resolve(data);
+}
+
+<span class="hljs-built_in">module</span>.exports.save = <span class="hljs-function">(<span class="hljs-params">uri, data, locals</span>) =&gt;</span> {
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">return</span> data;
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="clientjs"></a><a href="#clientjs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client.js</h3>
+<p>This file is simply the client-side controller for components when rendered as HTML. This will must export one function which will receive the DOM node for <em>each instance of the component on the page</em>. If your component appears in four different places on the page it will be called once for each instance.</p>
+<p>Example:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">el</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(el); <span class="hljs-comment">// Will print a DOM element for each component instance on the page</span>
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="templatehbs"></a><a href="#templatehbs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Template.hbs</h3>
+<p>Finally, your template is a <a href="https://handlebarsjs.com/expressions.html">Handlebars</a> file which will be passed your component's data during templating. Handlebars is used because the clients can be rendered on the server and then re-rendered in the client when a user is editing, making for a snappy editing experience.</p>
+<p>Templates have a <a href="https://handlebarsjs.com/expressions.html">few assumptions built into them by Kiln</a> which we will quickly outline:</p>
+<ul>
+<li>A template has only one root element if inside the <code>body</code> of the HTML document</li>
+<li>The root DOM element has a <code>data-uri</code> property on it's root element</li>
+<li>If in the <code>head</code> of the page an HTML comment is included with the <code>data-uri</code> attribute defined</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!-- data-uri="{{ default _ref _self}}" --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"something"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"something else"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"another thing"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"another bit of data"</span> /&gt;</span>
+</code></pre>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-uri</span>=<span class="hljs-string">"{{ default _ref _self}}"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"{{ componentVariation }}"</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- The contents of your component --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="putting-it-all-together"></a><a href="#putting-it-all-together" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Putting It All Together</h2>
+<p>While this introduction covered the most common files in a component directory we didn't really discuss the development process for a component. We'll come to that next, but for now let's test that we can get access to your component's REST endpoint to get the starter data before moving on.</p>
+<p>Assuming you're using the <a href="https://github.com/clay/clay-starter">Clay starter</a> and that your component name is <code>my-component</code>, you should be able to navigate to <a href="localhost/_components/my-component"><code>localhost/_components/my-component</code></a> and see the default data for your component.</p>
+<p>In the following pages we'll look at iterating on a component, compiling your component's assets/styles and adding your component to <a href="https://claycms.gitbook.io/kiln/kiln-fundamentals/components/manipulating-components#component-lists">component lists</a> in other components.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/clay/docs/getting-started"><span class="arrow-prev">← </span><span>Getting Started</span></a><a class="docs-next button" href="/clay/docs/components"><span>Components</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#anatomy-of-a-component">Anatomy of a Component</a><ul class="toc-headings"><li><a href="#schemayml">Schema.yml</a></li><li><a href="#bootstrapyml">Bootstrap.yml</a></li><li><a href="#modeljs">Model.js</a></li><li><a href="#clientjs">Client.js</a></li><li><a href="#templatehbs">Template.hbs</a></li></ul></li><li><a href="#putting-it-all-together">Putting It All Together</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/clay/" class="nav-home"></a><div><h5>Docs</h5><a target="_blank" href="/clay/docs/en/getting-started">Getting Started</a><a target="_blank" href="/clay/docs/en/glossary">Glossary</a></div><div><h5>More</h5><a target="_blank" href="https://github.com/clay/clay-starter">GitHub</a></div></section><section class="copyright">Copyright © 2019 New York Media</section></footer></div></body></html>

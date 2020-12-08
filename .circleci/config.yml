@@ -14,7 +14,7 @@ jobs:
           name: Build
           command: |
             sudo apt-get -y install awscli
-            bash ./.circlci/scripts/deploy.sh
+            bash ./.circleci/scripts/deploy.sh
       - save_cache:
           key: v1-{{ checksum "website/package.json" }}
           paths:

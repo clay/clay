@@ -1,0 +1,32 @@
+---
+version: 2
+
+jobs:
+  build_and_deploy_docs:
+    docker:
+      - image: circleci/node:14
+    working_directory: ~/src
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-{{ checksum "website/package.json" }}
+      - run:
+          name: Build
+          command: |
+            sudo apt-get -y install awscli
+            bash ./.circlci/scripts/deploy.sh
+      - save_cache:
+          key: v1-{{ checksum "website/package.json" }}
+          paths:
+            - node_modules
+
+workflows:
+  version: 2
+  build_and_deploy_docs:
+    jobs:
+      - build_and_deploy_docs:
+          filters:
+            branches:
+              only: master
+            tags:
+              only: docs

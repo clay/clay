@@ -46,7 +46,9 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a target="_blank" href="https://github.com/clay/clay-starter">GitHub</a>
+            <a target="_blank" href="https://docs.clayplatform.io/amphora/">Amphora Documentation</a>
+            <a target="_blank" href="https://docs.clayplatform.io/clay-kiln/">Kiln Documentation</a>
+            <a target="_blank" href="https://github.com/clay/clay-starter">Clay Starter Repo</a>
           </div>
         </section>
         <section className="copyright">{this.props.config.copyright}</section>

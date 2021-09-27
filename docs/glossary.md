@@ -71,7 +71,7 @@ When we talk about the API for components we like to illustrate the path as foll
 
 ## Kiln
 
-The edit interface for Clay which can he found here: [https://github.com/clay/clay-kiln](https://github.com/clay/clay-kiln). This package is a Vue app which sits on top of your page in edit mode and generated the fields, forms and panes which users interact with. It also supports its own plugin system so that you can customize your editing experience based on user needs.
+The edit interface for Clay which can be found here: [https://github.com/clay/clay-kiln](https://github.com/clay/clay-kiln). This package is a Vue app which sits on top of your page in edit mode and generates the fields, forms and panes which users interact with. It also supports its own plugin system so that you can customize your editing experience based on user needs.
 
 A user can enter edit mode in two ways:
 
@@ -84,7 +84,7 @@ Kiln is actually just a component itself and abides by the same API's as any oth
 
 ## Locals
 
-This object is passed to component's model.js functions and contains information about the request that is causing a component to be rendered/save. The following properties are available:
+This object is passed to component's `model.js` functions and contains information about the request that is causing a component to be rendered/saved. The following properties are available:
 
 - `url` (String): the url of the request. Can be a specific component instance, a page uri or a public url
 - `edit` (Boolean): a flag indicating if the request is coming from an authenticated user or not

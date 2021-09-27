@@ -9,7 +9,7 @@ sidebar_label: Building A Component
 This page descibes building a component. Before looking at the files that constitute a component [it's a good idea to read about what a component is](components.md). If you feel good about those concepts then let's outline a few basics about the component structure:
 
 - A component must live in the `components` directory at the root of your Clay instance
-- The directory name the omponent lives in will be the name of the component
+- The directory name the component lives in will be the name of the component
 - Your component's name should be [kebab case](http://wiki.c2.com/?KebabCase)
 
 ## Anatomy of a Component
@@ -101,7 +101,7 @@ module.exports = el => {
 
 ### Template.hbs
 
-Finally, your template is a [Handlebars](https://handlebarsjs.com/expressions.html) file which will be passed your component's data during templating. Handlebars is used because the clients can be rendered on the server and then re-rendered in the client when a user is editing, making for a snappy editing experience.
+Finally, your template is a [Handlebars](https://handlebarsjs.com/expressions.html) file which will be passed your component's data during templating. Handlebars is used because the templates can be rendered on the server and then re-rendered in the client when a user is editing, making for a snappy editing experience.
 
 Templates have a [few assumptions built into them by Kiln](https://handlebarsjs.com/expressions.html) which we will quickly outline:
 
